@@ -72,7 +72,7 @@ brut în `data/raw/`.
 Nu e necesar dacă ai deja un fișier în `data/raw/` — pipeline-ul îl folosește
 pe cel mai recent.
 
-### Pipeline-ul complet (~60 secunde)
+### Pipeline-ul complet (~70 secunde)
 
 ```bash
 python train_all.py
@@ -150,14 +150,15 @@ print(f"{np.exp(model.predict(ap))[0]:,.0f} EUR")
 │   └── processed/              CSV curat, train/test, encoder
 ├── models/                     modelele antrenate
 └── reports/
+    ├── lucrare.md / .docx      lucrarea scrisa
     ├── rezultate_modele.csv    tabelul comparativ
     └── figures/                graficele
 ```
 
 ## Decizii metodologice
 
-**Ținta este `log(preț)`.** Distribuția prețului are asimetrie 3,49; după
-logaritmare scade la 0,17. Regresia liniară presupune erori normal distribuite —
+**Ținta este `log(preț)`.** Distribuția prețului are asimetrie 3,30; după
+logaritmare scade la 0,16. Regresia liniară presupune erori normal distribuite —
 pe prețul brut presupunerea e falsă.
 
 **Suprafața și prețul pe m² al orașului intră tot logaritmate.** Cu ținta deja
@@ -170,8 +171,8 @@ prezice 3,7 milioane € pentru un apartament de 400 m².
 prețul.** Encoding-ul pe oraș folosește prețul mediu pe m², deci calculat pe
 tot setul ar fi data leakage.
 
-**Encoding-ul pe oraș folosește netezire bayesiană.** Cele 604 orașe au între 1
-și 1.400 de anunțuri; media unui oraș cu 2 anunțuri e zgomot. Formula
+**Encoding-ul pe oraș folosește netezire bayesiană.** Cele 632 de localități au
+între 1 și 1.445 de anunțuri (604 apar în setul de antrenare); media unui oraș cu 2 anunțuri e zgomot. Formula
 `(n·media_oraș + 10·media_județ) / (n + 10)` trage orașele mici spre județ, iar
 județele mici spre media națională.
 
