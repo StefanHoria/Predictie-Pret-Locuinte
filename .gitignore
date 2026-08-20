@@ -1,0 +1,27 @@
+# Mediu virtual
+.venv/
+venv/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+.ipython/
+
+# Date scrapate - mari, se schimba la fiecare rulare si nu au voie redistribuite
+data/raw/*.json
+data/processed/*.csv
+
+# Modele antrenate - se regenereaza cu train_all.py
+models/*.joblib
+models/*.pt
+
+# Notebook: pastram codul, nu si output-urile
+# (daca vrei sa pastrezi si graficele in notebook, sterge liniile de mai jos)
+.ipynb_checkpoints/
+
+# Sistem
+Thumbs.db
+.DS_Store
+
+# Formulele randate pentru .docx - se regenereaza cu tools_md2docx.py
+reports/figures/formule/

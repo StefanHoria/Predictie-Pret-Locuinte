@@ -1,0 +1,17 @@
+# Dependentele proiectului, cu versiunile folosite efectiv la dezvoltare.
+#
+# Instalare:
+#   pip install -r requirements.txt
+#   pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cpu
+#
+# torch se instaleaza separat: varianta CPU (~200 MB) sta pe alt server decat
+# cea cu CUDA (~2.5 GB). Pentru acest proiect CPU e suficient - reteaua are
+# 5.441 de parametri si se antreneaza in ~20 de secunde.
+
+pandas==3.0.5
+numpy==2.4.6
+scikit-learn==1.9.0
+matplotlib==3.11.1
+seaborn==0.13.2
+jupyter==1.1.1
+joblib==1.5.3

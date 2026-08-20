@@ -1,0 +1,9 @@
+# Normalizeaza terminatiile de linie: LF in repo, nativ in copia de lucru.
+* text=auto
+
+# Fisiere binare - nu le atinge
+*.png binary
+*.docx binary
+*.joblib binary
+*.pt binary
+*.ipynb -text
